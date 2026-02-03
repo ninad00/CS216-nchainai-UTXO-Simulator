@@ -21,59 +21,59 @@ Enter choice: 6
 ========== Running Test Suite ==========
 
 =======================
-Running Test 1: Basic Valid Transaction
+Running Test 1: Basic Valid Transaction ✅
 [PASS] Transaction should be accepted by mempool
 [PASS] Transaction is present in mempool
 [PASS] Fee should be approx 0.100000 BTC
 [PASS] Change output back to Alice present and correct
 
 =======================
-Running Test 2: Multiple Inputs
+Running Test 2: Multiple Inputs ✅
 [PASS] Transaction with multiple inputs should be accepted
 [PASS] Transaction stored in mempool
 [PASS] Fee calculated correctly for multiple inputs
 
 
 =======================
-Running Test 3: Double-Spend in Same Transaction
+Running Test 3: Double-Spend in Same Transaction ✅
 [PASS] Transaction that spends same UTXO twice should be rejected
 [PASS] Error message should mention double-spending in same transaction
 
 
 =======================
-Running Test 4: Mempool Double-Spend
+Running Test 4: Mempool Double-Spend ✅
 [PASS] First transaction should be accepted into mempool
 [PASS] Second transaction spending same UTXO should be rejected by mempool
 [PASS] Error should indicate UTXO already spent in mempool
 
 
 =======================
-Running Test 5: Insufficient Funds
+Running Test 5: Insufficient Funds ✅
 [PASS] Transaction with outputs greater than inputs should be rejected (Insufficient funds)
 [PASS] Error message should indicate insufficient funds
 
 
 =======================
-Running Test 6: Negative Amount
+Running Test 6: Negative Amount ✅
 [PASS] Transaction with negative output amount should be rejected
 [PASS] Error message should mention negative output amount
 
 
 =======================
-Running Test 7: Zero Fee Transaction
+Running Test 7: Zero Fee Transaction ✅
 [PASS] Zero-fee transaction (inputs == outputs) should be accepted
 [PASS] Transaction present in mempool
 [PASS] Fee should be zero for zero-fee transaction
 
 
 =======================
-Running Test 8: Race Attack Simulation
+Running Test 8: Race Attack Simulation ✅
 [PASS] Low-fee transaction should be accepted when seen first
 [PASS] High-fee conflicting transaction arriving later should be rejected (first-seen rule)
 
 
 =======================
-Running Test 9: Complete Mining Flow
+Running Test 9: Complete Mining Flow ✅
 Mining block...
 Selected 2 transactions from mempool.
 Block Reward: 5.000 BTC
@@ -85,14 +85,14 @@ Block mined successfully!
 
 
 =======================
-Running Test 10: Unconfirmed Chain
+Running Test 10: Unconfirmed Chain ✅
 [PASS] TX1 should be accepted into mempool (creates an unconfirmed output conceptually)
 [PASS] Bob's spend of an unmined (mempool-only) UTXO should be rejected by this simulator design     
 [PASS] Error should indicate missing input UTXO
 
 
 =======================
-Running Test 11: Mempool Transaction Limit
+Running Test 11: Mempool Transaction Limit ✅
 Mempool transaction limit exceeded.
 Transaction tx_limit_5 has been evicted from the mempool.
 [PASS] Error should indicate mempool is full when the limit of 5 transactions is reached.
@@ -100,7 +100,7 @@ Transaction tx_limit_5 has been evicted from the mempool.
 
 
 =======================
-Running Test 12: Block Transaction Limit
+Running Test 12: Block Transaction Limit ✅
 [PASS] All transactions should be in mempool
 Mining block...
 Selected 4 transactions from mempool.
@@ -112,7 +112,7 @@ Block mined successfully!
 [PASS] Mempool should keep unmined transactions
 
 =======================
-Running Test 13: Block Reward Halving
+Running Test 13: Block Reward Halving ✅
 Mining block...
 Selected 1 transactions from mempool.
 Block Reward: 50.000 BTC
@@ -129,11 +129,11 @@ Block mined successfully!
 [PASS] Block 1 should have reward 50.000000
 Mining block...
 Selected 1 transactions from mempool.
-Block Reward: 25.000 BTC
+Block Reward: 25.000 BTC ✅<-- HALVES
 Total fees: 50.000 BTC
 Miner Eshwar receives 75.000 BTC
 Block mined successfully!
 [PASS] Block 2 should have reward 25.000000
 
 ========================================
-Passed 13 / 13 tests.
+Passed 13 / 13 tests. ✅✅✅
