@@ -1116,53 +1116,6 @@ Block new_block = mine_block(miner, mempool, utxo_manager,
                              // Change this to adjust block capacity
 ```
 
-## Key Concepts Demonstrated
-
-### UTXO Model
-- Each transaction consumes existing UTXOs as inputs
-- Creates new UTXOs as outputs
-- Change is returned to the sender as a new UTXO
-
-### Transaction Validation
-- Verifies input UTXOs exist in the UTXO set
-- Prevents double-spending within the same transaction
-- Checks for UTXOs already spent in the mempool
-- Validates sufficient funds (inputs >= outputs + fees)
-- Rejects negative output amounts
-
-### Mempool Management
-- Maintains pending transactions before mining
-- Tracks spent UTXOs to prevent double-spending
-- Prioritizes transactions by fee for mining
-- Enforces maximum size limit
-- Validates transactions before acceptance
-
-### Block Mining
-- Selects highest-fee transactions from mempool
-- Updates UTXO set (removes inputs, adds outputs)
-- Awards block reward + transaction fees to miner
-- Creates coinbase transaction for miner reward
-- Maintains blockchain with timestamps
-
-## Transaction Fees
-
-The simulator supports configurable transaction fees:
-- Fee percentage is set during simulator initialization (e.g., 0.01 for 1%)
-- Total transaction cost = amount + (amount × fee percentage), or amount × (1 + fee percentage)
-- Example: Sending 10 BTC with 1% fee costs 10.10 BTC total
-- Miners receive all transaction fees from mined blocks
-- Fees incentivize miners to include transactions in blocks
-
-## Example Workflow
-
-1. Start the simulator
-2. View initial UTXO set (genesis block)
-3. Create a transaction: Alice sends 10 BTC to Bob
-4. View mempool to see pending transaction
-5. Mine a block as Charlie
-6. View blockchain to see mined block
-7. View UTXO set to see updated balances
-
 ## Educational Value
 
 This simulator helps understand:
