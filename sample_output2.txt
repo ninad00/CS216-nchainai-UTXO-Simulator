@@ -22,7 +22,7 @@ Enter sender: Alice
 Available balance: 50.000 BTC
 Enter recipient: Arnav
 Enter amount: 50
-Error: Insufficient funds for fee.
+Error: Insufficient funds for fee. ❌ ❌ ❌ INPUTS < OUTPUTS(AMOUNT + CHANGE + FEE)
 
 Main Menu:
 1. Create new transaction
@@ -37,7 +37,7 @@ Enter sender: Alice
 Available balance: 50.000 BTC
 Enter recipient: Divyae
 Enter amount: 60
-Error: Insufficient funds.
+Error: Insufficient funds. ❌ ❌ ❌ INPUTS < AMOUNT
 
 Main Menu:
 1. Create new transaction
@@ -53,7 +53,7 @@ Available balance: 50.000 BTC
 Enter recipient: Ninad
 Enter amount: -67
 Creating transaction...
-Negative output amount
+Negative output amount ❌ ❌ ❌ NEGATIVE AMOUNT
 
 Main Menu:
 1. Create new transaction
@@ -66,7 +66,7 @@ Main Menu:
 Enter choice: 3
 
 --- Current Mempool ---
-Mempool is empty.
+Mempool is empty. ✅✅✅
 
 Main Menu:
 1. Create new transaction
@@ -85,7 +85,7 @@ Creating transaction...
 Transaction valid! Fee: 0.200000
 Transaction ID: tx_Alice_Eshwar_334
 Transaction added to mempool.
-Mempool now has 1 transactions.
+Mempool now has 1 transactions. ✅✅✅ SUCCESSFULLY ADDED TRANSACTION TO MEMPOOL
 
 Main Menu:
 1. Create new transaction
@@ -104,7 +104,7 @@ Creating transaction...
 Transaction valid! Fee: 0.100000
 Transaction ID: tx_Bob_Divyae_500
 Transaction added to mempool.
-Mempool now has 2 transactions.
+Mempool now has 2 transactions. ✅✅✅ SUCCESSFULLY ADDED TRANSACTION TO MEMPOOL
 
 Main Menu:
 1. Create new transaction
@@ -123,7 +123,7 @@ Creating transaction...
 Transaction valid! Fee: 0.050000
 Transaction ID: tx_Charlie_Arnav_169
 Transaction added to mempool.
-Mempool now has 3 transactions.
+Mempool now has 3 transactions. ✅✅✅ SUCCESSFULLY ADDED TRANSACTION TO MEMPOOL
 
 Main Menu:
 1. Create new transaction
@@ -142,7 +142,7 @@ Creating transaction...
 Transaction valid! Fee: 0.050000
 Transaction ID: tx_David_5_724
 Transaction added to mempool.
-Mempool now has 4 transactions.
+Mempool now has 4 transactions. ✅✅✅ SUCCESSFULLY ADDED TRANSACTION TO MEMPOOL
 
 Main Menu:
 1. Create new transaction
@@ -161,7 +161,7 @@ Creating transaction...
 Transaction valid! Fee: 0.030000
 Transaction ID: tx_Eve_Ninad_478
 Transaction added to mempool.
-Mempool now has 5 transactions.
+Mempool now has 5 transactions. ✅✅✅ SUCCESSFULLY ADDED TRANSACTION TO MEMPOOL
 
 Main Menu:
 1. Create new transaction
@@ -173,7 +173,7 @@ Main Menu:
 7. Exit
 Enter choice: 3
 
---- Current Mempool ---
+--- Current Mempool --- ✅✅✅ DISPLAY MEMPOOL
 TX ID                    Inputs    Outputs   Fee       
 tx_Alice_Eshwar_334      1         2         0.200
 tx_Bob_Divyae_500        1         2         0.100     
@@ -194,7 +194,7 @@ Enter sender: Alice
 Available balance: 50.000 BTC
 Enter recipient: Alice 
 Enter amount: 10
-Error: All available UTXOs are already pending in mempool.
+Error: All available UTXOs are already pending in mempool. ❌ ❌ ❌ DOUBLE SPENDING OF UNSPENT UTXO
 
 Main Menu:
 1. Create new transaction
@@ -224,9 +224,9 @@ Main Menu:
 7. Exit
 Enter choice: 4
 Enter miner name: Arnav
-Mining block...
+Mining block... ✅✅✅
 Selected 4 transactions from mempool.
-Block Reward: 6.250 BTC
+Block Reward: 6.250 BTC ✅ BLOCK REWARD
 Total fees: 0.400 BTC
 Miner Arnav receives 6.650 BTC
 Block mined successfully!
@@ -241,7 +241,7 @@ Main Menu:
 7. Exit
 Enter choice: 2
 
---- Current UTXO Set ---
+--- Current UTXO Set --- ✅✅✅ UPDATED UTXO SET
 TX ID               Index     Amount         Owner
 coinbase_block_1    0         6.650          Arnav          
 genesis             4         5.000          Eve
@@ -254,6 +254,7 @@ tx_Charlie_Arnav_1691         14.950         Charlie
 tx_David_5_724      0         5.000          5
 tx_David_5_724      1         4.950          David
 
+------------------------------------ CONTD----------------------------------------
 Main Menu:
 1. Create new transaction
 2. View UTXO set
@@ -277,7 +278,7 @@ Main Menu:
 6. Run test scenarios
 7. Exit
 Enter choice: 5
-
+✅✅✅ SUCCESSFULLY DISPLAY BLOCKCHAIN
 +-------------------------------------+
 | Block #1 | Miner: Arnav             |
 | Time: Tue Feb 03 20:33:56 2026      |
@@ -306,7 +307,7 @@ Creating transaction...
 Transaction valid! Fee: 0.010000
 Transaction ID: tx_Alice_Eshwar_962
 Transaction added to mempool.
-Mempool now has 2 transactions.
+Mempool now has 2 transactions. ✅✅✅ SUCCESSFULLY ADDED TRANSACTION TO MEMPOOL
 
 Main Menu:
 1. Create new transaction
@@ -320,9 +321,9 @@ Enter choice: 4
 Enter miner name: Divyae
 Mining block...
 Selected 2 transactions from mempool.
-Block Reward: 6.250 BTC
+Block Reward: 6.250 BTC 
 Total fees: 0.040 BTC
-Miner Divyae receives 6.290 BTC
+Miner Divyae receives 6.290 BTC ✅✅✅ BLOCK REWARD + FEE FOR MINER
 Block mined successfully!
 
 Main Menu:
@@ -342,7 +343,7 @@ Creating transaction...
 Transaction valid! Fee: 0.020000
 Transaction ID: tx_Alice_Arnav_464
 Transaction added to mempool.
-Mempool now has 1 transactions.
+Mempool now has 1 transactions. ✅✅✅ SUCCESSFULLY ADDED TRANSACTION TO MEMPOOL
 
 Main Menu:
 1. Create new transaction
@@ -356,7 +357,7 @@ Enter choice: 4
 Enter miner name: Divyae
 Mining block...
 Selected 1 transactions from mempool.
-Block Reward: 3.125 BTC
+Block Reward: 3.125 BTC ✅✅✅ BLOCK REWARD HALFS
 Total fees: 0.020 BTC
 Miner Divyae receives 3.145 BTC
 Block mined successfully!
@@ -383,7 +384,7 @@ Main Menu:
 6. Run test scenarios
 7. Exit
 Enter choice: 5
-
+✅✅✅ SUCCESSFULLY DISPLAY BLOCKCHAIN
 +-------------------------------------+
 | Block #1 | Miner: Arnav             |
 | Time: Tue Feb 03 20:33:56 2026      |
