@@ -2,11 +2,11 @@
 #define TESTS_H
 
 #include <bits/stdc++.h>
-#include "simulator.h"
+#include "../src/simulator.h"
 
 using namespace std;
 
-namespace tests {
+
 
 static const double EPS = 1e-9;
 
@@ -114,8 +114,6 @@ static bool test_multiple_inputs(double gas_fee) {
         if (stored) {
             double total_input = 50.0 + 20.0;
             double expected_fee = send_amount*gas_fee;
-            cout<<stored->fee<<endl;
-            cout<<expected_fee<<endl;
             expect(fabs(stored->fee - expected_fee) < 1e-9, "Fee calculated correctly for multiple inputs");
             ok = fabs(stored->fee - expected_fee) < 1e-9;
         }
@@ -432,14 +430,14 @@ static bool test_mempool_transaction_limit() {
             txs_added++;
         } else {
             // Check if it's due to mempool being full
-            tests::expect(res.second.find("Mempool is full") != string::npos,
+            expect(res.second.find("Mempool is full") != string::npos,
                          "Error should indicate mempool is full when the limit of "+to_string(mp.max_size)+" transactions is reached.");
             break;
         }
     }
     
     bool ok = txs_added > 0 && txs_added <= 5; 
-    tests::expect(ok, "Mempool should accept transactions up to limit, then reject");
+    expect(ok, "Mempool should accept transactions up to limit, then reject");
     cout << endl;
     return ok;
 }
@@ -558,33 +556,7 @@ static bool test_block_reward_halving(int k) {
 /*
 Run all tests and print a summary.
 */
-static void run_all_tests(int k, double gas_fee) {
-    cout << "========== Running Test Suite ==========" << endl;
-    int passed = 0;
-    const int total = 13;
-    if (test_basic_valid_transaction(gas_fee)) passed++;
-    if (test_multiple_inputs(gas_fee)) passed++;
-    if (test_double_spend_same_tx()) passed++;
-    if (test_mempool_double_spend()) passed++;
-    if (test_insufficient_funds()) passed++;
-    if (test_negative_amount()) passed++;
-    if (test_zero_fee_transaction()) passed++;
-    if (test_race_attack_simulation()) passed++;
-    if (test_complete_mining_flow(gas_fee)) passed++;
-    if (test_unconfirmed_chain()) passed++;
-    if (test_mempool_transaction_limit()) passed++;
-    if (test_block_transaction_limit()) passed++;
-    if (test_block_reward_halving(k)) passed++;
 
-    cout << "========================================" << endl;
-    cout << "Passed " << passed << " / " << total << " tests." << endl;
-}
 
-} // namespace tests
-
-void Simulator::run_test_scenarios(int k, double gas_fee)
-{
-    tests::run_all_tests(k, gas_fee);
-}
 
 #endif // TESTS_H

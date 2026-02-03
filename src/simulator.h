@@ -3,7 +3,7 @@
 
 #include<bits/stdc++.h>
 #include"block.h"
-#include "tests.h"
+#include "../test/tests.h"
 
 using namespace std;
 
@@ -36,7 +36,29 @@ public:
         utxo_manager.add_utxo("genesis", 4, 5.0, "Eve");
     }
 
-    void run_test_scenarios(int, double);
+
+        void run_test_scenarios(int k, double gas_fee) {
+    cout << "========== Running Test Suite ==========" << endl;
+    int passed = 0;
+    const int total = 13;
+    if (test_basic_valid_transaction(gas_fee)) passed++;
+    if (test_multiple_inputs(gas_fee)) passed++;
+    if (test_double_spend_same_tx()) passed++;
+    if (test_mempool_double_spend()) passed++;
+    if (test_insufficient_funds()) passed++;
+    if (test_negative_amount()) passed++;
+    if (test_zero_fee_transaction()) passed++;
+    if (test_race_attack_simulation()) passed++;
+    if (test_complete_mining_flow(gas_fee)) passed++;
+    if (test_unconfirmed_chain()) passed++;
+    if (test_mempool_transaction_limit()) passed++;
+    if (test_block_transaction_limit()) passed++;
+    if (test_block_reward_halving(k)) passed++;
+
+    cout << "========================================" << endl;
+    cout << "Passed " << passed << " / " << total << " tests." << endl;
+}
+    
 
     void create_transaction_ui() 
     {
