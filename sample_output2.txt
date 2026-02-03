@@ -438,3 +438,131 @@ Enter choice: 5
 |   +-- tx_David... [1->2] Fee: 0.050 |
 +-------------------------------------+
 
+Main Menu:
+1. Create new transaction
+2. View UTXO set
+3. View mempool
+4. Mine block
+5. View blockchain
+6. Run test scenarios
+7. Exit
+Enter choice: 1
+Enter sender: Alice
+Available balance: 29.800 BTC
+Enter recipient: Eshwar
+Enter amount: 1
+Creating transaction...
+Transaction valid! Fee: 0.010000
+Transaction ID: tx_Alice_Eshwar_962
+Transaction added to mempool.
+Mempool now has 2 transactions.
+
+Main Menu:
+1. Create new transaction
+2. View UTXO set
+3. View mempool
+4. Mine block
+5. View blockchain
+6. Run test scenarios
+7. Exit
+Enter choice: 4
+Enter miner name: Divyae
+Mining block...
+Selected 2 transactions from mempool.
+Block Reward: 6.250 BTC
+Total fees: 0.040 BTC
+Miner Divyae receives 6.290 BTC
+Block mined successfully!
+
+Main Menu:
+1. Create new transaction
+2. View UTXO set
+3. View mempool
+4. Mine block
+5. View blockchain
+6. Run test scenarios
+7. Exit
+Enter choice: 1
+Enter sender: Alice
+Available balance: 28.790 BTC
+Enter recipient: Arnav
+Enter amount: 2
+Creating transaction...
+Transaction valid! Fee: 0.020000
+Transaction ID: tx_Alice_Arnav_464
+Transaction added to mempool.
+Mempool now has 1 transactions.
+
+Main Menu:
+1. Create new transaction
+2. View UTXO set
+3. View mempool
+4. Mine block
+5. View blockchain
+6. Run test scenarios
+7. Exit
+Enter choice: 4
+Enter miner name: Divyae
+Mining block...
+Selected 1 transactions from mempool.
+Block Reward: 3.125 BTC
+Total fees: 0.020 BTC
+Miner Divyae receives 3.145 BTC
+Block mined successfully!
+
+Main Menu:
+1. Create new transaction
+2. View UTXO set
+3. View mempool
+4. Mine block
+5. View blockchain
+6. Run test scenarios
+7. Exit
+Enter choice: 3
+
+--- Current Mempool ---
+Mempool is empty.
+
+Main Menu:
+1. Create new transaction
+2. View UTXO set
+3. View mempool
+4. Mine block
+5. View blockchain
+6. Run test scenarios
+7. Exit
+Enter choice: 5
+
++-------------------------------------+
+| Block #1 | Miner: Arnav             |
+| Time: Tue Feb 03 20:33:56 2026      |
+| Reward: 6.250 | Fees: 0.400 BTC     |
+| TXs: 4                              |
+|   +-- tx_Alice... [1->2] Fee: 0.200 |
+|   +-- tx_Bob_D... [1->2] Fee: 0.100 |
+|   +-- tx_Charl... [1->2] Fee: 0.050 |
+|   +-- tx_David... [1->2] Fee: 0.050 |
++-------------------------------------+
+
+                 |
+                 v
+
++-------------------------------------+
+| Block #2 | Miner: Divyae            |
+| Time: Tue Feb 03 20:35:35 2026      |
+| Reward: 6.250 | Fees: 0.040 BTC     |
+| TXs: 2                              |
+|   +-- tx_Eve_N... [1->2] Fee: 0.030 |
+|   +-- tx_Alice... [1->2] Fee: 0.010 |
++-------------------------------------+
+
+                 |
+                 v
+
++-------------------------------------+
+| Block #3 | Miner: Divyae            |
+| Time: Tue Feb 03 20:36:00 2026      |
+| Reward: 3.125 | Fees: 0.020 BTC     |
+| TXs: 1                              |
+|   +-- tx_Alice... [1->2] Fee: 0.020 |
++-------------------------------------+
