@@ -27,7 +27,6 @@ Running Test 1: Basic Valid Transaction
 [PASS] Fee should be approx 0.100000 BTC
 [PASS] Change output back to Alice present and correct
 
-
 =======================
 Running Test 2: Multiple Inputs
 [PASS] Transaction with multiple inputs should be accepted
