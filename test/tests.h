@@ -61,9 +61,7 @@ static bool test_basic_valid_transaction(double gas_fee) {
         expect(stored != nullptr, "Transaction is present in mempool");
         if (stored) 
         {
-            cout<<stored->fee<<endl;
-            cout<<tx.fee<<endl;
-            expect(fabs(stored->fee - tx.fee) < 1e-9, "Fee should be approx"+to_string(tx.fee)+"BTC");
+            expect(fabs(stored->fee - tx.fee) < 1e-9, "Fee should be approx "+to_string(tx.fee)+" BTC");
             bool found_change = false;
             for (auto &o : stored->outputs) {
                 if (o.address == "Alice" && fabs(o.amount - change) < EPS) found_change = true;
