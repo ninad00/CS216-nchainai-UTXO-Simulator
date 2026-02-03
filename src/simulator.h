@@ -124,8 +124,16 @@ public:
             cout << "Blockchain is empty. No blocks mined yet." << endl;
             return;
         }
-        for (auto& block : blockchain) {
-            block.display();
+        for (int i = 0; i < blockchain.size(); ++i) {
+            int box_width = blockchain[i].display();
+            if (i < blockchain.size() - 1) {
+                int dashes = box_width - 2; 
+                int center_pos = box_width / 2 - 3;
+                cout << endl; 
+                cout << "  " << string(center_pos - 1, ' ') << "|" << endl;
+                cout << "  " << string(center_pos - 1, ' ') << "v" << endl;
+            }
+            
         }
     }
 

@@ -10,22 +10,44 @@ struct Block {
     double block_reward;
     string timestamp;
 
-    void display() {
-        cout << "\n================ BLOCK " << block_height << " ================" << endl;
-        cout << "Miner: " << miner << endl;
-        cout << "Timestamp: " << timestamp << endl;
-        cout << "Block Reward: " << fixed << setprecision(3) << block_reward << " BTC" << endl;
-        cout << "Total Fees: " << total_fees << " BTC" << endl;
-        cout << "Total Transactions: " << transactions.size() << endl;
-        cout << "---------------- Transactions ----------------" << endl;
-        for (const auto& tx : transactions) {
-            cout << "  TX ID: " << tx.tx_id << " | Fee: " << tx.fee << " BTC" << endl;
-            cout << "    Inputs: " << tx.inputs.size() << " | Outputs: " << tx.outputs.size() << endl;
-            for (const auto& out : tx.outputs) {
-                cout << "      -> " << out.address << ": " << out.amount << " BTC" << endl;
-            }
+    // Prints the block as an ASCII box and returns the total printed box width
+    int display() {
+        vector<string> lines;
+        // Header line
+        lines.push_back("Block #" + to_string(block_height) + " | Miner: " + miner);
+        // Time
+        lines.push_back(string("Time: ") + timestamp);
+        // Reward and fees line (formatted)
+        {
+            ostringstream oss;
+            oss << fixed << setprecision(3) << "Reward: " << block_reward << " | Fees: " << total_fees << " BTC";
+            lines.push_back(oss.str());
         }
-        cout << "===============================================" << endl;
+        // TX count
+        lines.push_back(string("TXs: ") + to_string(transactions.size()));
+        // Transactions
+        for (const auto& tx : transactions) {
+            ostringstream oss;
+            oss << "  +-- " << tx.tx_id.substr(0, 8) << "... [" << tx.inputs.size() << "->" << tx.outputs.size() << "] Fee: " << fixed << setprecision(3) << tx.fee;
+            lines.push_back(oss.str());
+        }
+
+        // Determine max line length
+        size_t max_len = 0;
+        for (const auto& s : lines) max_len = max(max_len, s.size());
+
+        // inner width includes a single space padding on each side
+        size_t inner_width = max_len + 2; // one space left and right
+        size_t total_width = inner_width + 2; // add the '+' borders
+
+        string border = "+" + string(inner_width, '-') + "+";
+        cout << "\n" << border << endl;
+        for (const auto& s : lines) {
+            cout << "| " << s << string(max_len - s.size(), ' ') << " |" << endl;
+        }
+        cout << border << endl;
+
+        return static_cast<int>(total_width);
     }
 };
 
